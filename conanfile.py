@@ -4,7 +4,7 @@ class Mayo(ConanFile):
    settings = "os", "compiler", "build_type", "arch"
    requires = "opencascade/7.6.2", "zlib/1.2.13", "bzip2/1.0.8", "tk/8.6.10", "tcl/8.6.11" # comma-separated list of requirements
    generators = "cmake", "cmake_paths"
-   default_options = {"opencascade:shared": False}
+   default_options = {"opencascade:shared": False, "opencascade:with_rapidjson": True}
 
    def imports(self):
       self.copy("*.dll", dst="bin", src="bin") # From bin to bin
